@@ -22,8 +22,8 @@ def generate_maze(cols, rows):
     visited.add((0, 0))
 
     while stack:
-        c, r = stack[-1]
-        dirs = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+        c, r = stack[-1] # Lấy ô mới nhất vừa được thêm vào
+        dirs = [(0, -1), (0, 1), (-1, 0), (1, 0)] #⬆️⬇️⬅️➡️
         random.shuffle(dirs)
         found = False
 
@@ -55,7 +55,7 @@ def build_walls_from_maze(passages, cols, rows):
 
     # --- Viền ngoài (4 cạnh) ---
     # Trên
-    walls.append(pygame.Rect(off_x - W // 2, off_y - W // 2,
+    walls.append(pygame.Rect(off_x - W // 2, off_y - W // 2, # // là chia lấy nguyên
                              cols * T + W, W))
     # Dưới
     walls.append(pygame.Rect(off_x - W // 2, off_y + rows * T - W // 2,
